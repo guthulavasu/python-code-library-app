@@ -19,10 +19,9 @@ services:
       - mynetwork
     depends_on:
       - db
-    
 
   book_service:
-    image:  guthulavasuu/projectrepo:bookimage
+    image: guthulavasuu/projectrepo:bookimage
     deploy:
       replicas: 1
     ports:
@@ -31,6 +30,7 @@ services:
       - mynetwork
     depends_on:
       - db
+
   borrow_service:
     image: guthulavasuu/projectrepo:borrowimage
     deploy:
@@ -44,4 +44,4 @@ services:
 
 networks:
   mynetwork:
-    driver: bridge
+    driver: overlay
